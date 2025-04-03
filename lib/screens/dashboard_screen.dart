@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/custom_drawer.dart';
 import 'results_screen.dart'; // Importing ResultsScreen
+import 'preregistration_page.dart'; // Importing PreregistrationPage
+import 'billing_history_page.dart'; // Importing BillingHistoryPage
+import 'class_schedule_page.dart'; // Importing ClassSchedulePage
+import 'my_profile_page.dart'; // Importing MyProfilePage
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -51,20 +55,24 @@ class DashboardScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 children: [
-                  _buildMenuCard(context, 'Billing History', Icons.history),
-                  _buildMenuCard(context, 'Current Status', Icons.info),
-                  _buildMenuCard(
-                    context,
-                    'Preregistration',
-                    Icons.app_registration,
-                  ),
-                  _buildMenuCard(
-                    context,
-                    'Class Schedule',
-                    Icons.calendar_today,
-                  ),
-                  _buildMenuCard(context, 'My Profile', Icons.person),
-                  _buildMenuCard(context, 'Change Password', Icons.lock),
+                  _buildMenuCard(context, 'Billing History', Icons.history, () {
+                    Get.to(() => const BillingHistoryPage());
+                  }),
+                  _buildMenuCard(context, 'Current Status', Icons.info, () {
+                    // TODO: Implement functionality
+                  }),
+                  _buildMenuCard(context, 'Preregistration', Icons.app_registration, () {
+                    Get.to(() => const PreregistrationPage());
+                  }),
+                  _buildMenuCard(context, 'Class Schedule', Icons.calendar_today, () {
+                    Get.to(() => const ClassSchedulePage());
+                  }),
+                  _buildMenuCard(context, 'My Profile', Icons.person, () {
+                    Get.to(() => const MyProfilePage());
+                  }),
+                  _buildMenuCard(context, 'Change Password', Icons.lock, () {
+                    // TODO: Implement functionality
+                  }),
                 ],
               ),
             ),
@@ -76,15 +84,15 @@ class DashboardScreen extends StatelessWidget {
         currentIndex: 2,
         onTap: (index) {
           if (index == 0) {
-            // Navigate to Billing History
+            Get.to(() => const BillingHistoryPage());
           } else if (index == 1) {
-            // Navigate to Schedule
+            Get.to(() => const ClassSchedulePage());
           } else if (index == 2) {
             // Navigate to Home
           } else if (index == 3) {
             Get.to(() => const ResultsScreen()); // Navigate to Results screen
           } else if (index == 4) {
-            // Navigate to Profile
+            Get.to(() => const MyProfilePage()); // Navigate to Profile
           }
         },
         items: const [
@@ -101,12 +109,10 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuCard(BuildContext context, String title, IconData icon) {
+  Widget _buildMenuCard(BuildContext context, String title, IconData icon, VoidCallback onTap) {
     return Card(
       child: InkWell(
-        onTap: () {
-          // TODO: Add navigation for other menu cards
-        },
+        onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
