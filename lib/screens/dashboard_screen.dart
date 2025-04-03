@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/custom_drawer.dart';
+import 'results_screen.dart'; // Importing ResultsScreen
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -74,8 +75,16 @@ class DashboardScreen extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         currentIndex: 2,
         onTap: (index) {
-          if (index == 2) {
-            Get.toNamed('/home');
+          if (index == 0) {
+            // Navigate to Billing History
+          } else if (index == 1) {
+            // Navigate to Schedule
+          } else if (index == 2) {
+            // Navigate to Home
+          } else if (index == 3) {
+            Get.to(() => const ResultsScreen()); // Navigate to Results screen
+          } else if (index == 4) {
+            // Navigate to Profile
           }
         },
         items: const [
@@ -96,7 +105,7 @@ class DashboardScreen extends StatelessWidget {
     return Card(
       child: InkWell(
         onTap: () {
-          // TODO: Navigate to respective pages
+          // TODO: Add navigation for other menu cards
         },
         child: Padding(
           padding: const EdgeInsets.all(16.0),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../screens/my_review_screen.dart'; // Importing MyReviewScreen
+import '../screens/teacher_review_page.dart'; // Importing TeacherReviewPage
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -34,7 +35,9 @@ class CustomDrawer extends StatelessWidget {
             leading: const Icon(Icons.person),
             title: const Text('Teachers'),
             onTap: () {
-              // TODO: Navigate to Teachers page
+              // Navigate to Teacher Review Page
+              Get.back(); // Close the drawer first
+              Get.to(() => const TeacherReviewPage());
             },
           ),
           ListTile(
