@@ -1,0 +1,53 @@
+UI Structure (Based on UI Idea.jpg):
+
+Login Page:
+
+The first page is a login screen for student authentication.
+Studnet id
+password
+
+Dashboard:
+
+Contains a menu button at the top-left corner that expands into a left-side menu covering half of the screen.
+The menu includes four buttons:
+Teachers
+My Review
+Logout
+
+Center has infos like
+Semester: 251 (Spring 2025) Student: 221014136 Prashanta Sarker
+Adviser: Dr. T.M. Abul Kalam Azad Email: abul.kalam@ulab.edu.bd
+
+
+Billing History
+
+Current Status
+
+Preregistration
+
+Class Schedule
+
+My Profile
+
+Change Password
+
+A bottom section with five navigation buttons:
+Billing
+Schedule
+Home
+Result
+Profile
+General Posting Page (Home Section):
+
+Selecting Home navigates to a general post feed.
+At the top, there is a text input field for creating a post.
+Below it, posts from different students are displayed.
+Each post has Like and Dislike buttons for interaction.
+Post Creation Page:
+
+Allows users to write text, attach files, images, and voice recordings.
+A Post button is located at either the top-right or bottom-right corner to publish the post.
+
+
+
+you dont have to create the pages that haven't been described as we are only building the UI
