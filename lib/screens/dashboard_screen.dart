@@ -6,6 +6,7 @@ import 'preregistration_page.dart'; // Importing PreregistrationPage
 import 'billing_history_page.dart'; // Importing BillingHistoryPage
 import 'class_schedule_page.dart'; // Importing ClassSchedulePage
 import 'my_profile_page.dart'; // Importing MyProfilePage
+import 'home_screen.dart'; // Importing HomeScreen
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -55,20 +56,8 @@ class DashboardScreen extends StatelessWidget {
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 children: [
-                  _buildMenuCard(context, 'Billing History', Icons.history, () {
-                    Get.to(() => const BillingHistoryPage());
-                  }),
-                  _buildMenuCard(context, 'Current Status', Icons.info, () {
-                    // TODO: Implement functionality
-                  }),
                   _buildMenuCard(context, 'Preregistration', Icons.app_registration, () {
                     Get.to(() => const PreregistrationPage());
-                  }),
-                  _buildMenuCard(context, 'Class Schedule', Icons.calendar_today, () {
-                    Get.to(() => const ClassSchedulePage());
-                  }),
-                  _buildMenuCard(context, 'My Profile', Icons.person, () {
-                    Get.to(() => const MyProfilePage());
                   }),
                   _buildMenuCard(context, 'Change Password', Icons.lock, () {
                     // TODO: Implement functionality
@@ -88,7 +77,7 @@ class DashboardScreen extends StatelessWidget {
           } else if (index == 1) {
             Get.to(() => const ClassSchedulePage());
           } else if (index == 2) {
-            // Navigate to Home
+            Get.to(() => const HomeScreen()); // Navigate to Home Screen
           } else if (index == 3) {
             Get.to(() => const ResultsScreen()); // Navigate to Results screen
           } else if (index == 4) {
